@@ -47,7 +47,7 @@ function buttonContentValidation(buttonContent){
 }
 
 function inputLabelValidation(){
-  var formItems = document.querySelectorAll('.form-item');
+  var formItems = document.querySelectorAll('.label-type');
   for(var i=0; i < formItems.length; i++){
     if(formItems[i].querySelectorAll('label').length === 0){
       return false;
@@ -117,3 +117,8 @@ if(errors.length === 0){
     listResults.appendChild(displayedText);
   }
 }
+
+document.querySelector("#email").addEventListener("blur",validateEmail);
+document.querySelector("#email").addEventListener("focus",hideValidationError);
+document.querySelector("#password").addEventListener("blur",validatePassword);
+document.querySelector("#password").addEventListener("focus",hideValidationError);

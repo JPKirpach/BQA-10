@@ -51,6 +51,16 @@ function requiredFields(){
   return true;
 }
 
+function inputLabelValidation(){
+  var formItems = document.querySelectorAll('.form-item');
+  for(var i=0; i < formItems.length; i++){
+    if(formItems[i].querySelectorAll('label').length === 0){
+      return false;
+    }
+  }
+  return true;
+}
+
 var errors = [];
 
 var requiredInputs = ['email', 'password', 'text'];
@@ -95,6 +105,10 @@ if(!requiredFields()){
 
 if(!buttonContentValidation(buttonContent)){
   errors.unshift('Button content is incorrect.');
+}
+
+if(!inputLabelValidation()){
+  errors.unshift('Some fields do not have associated labels.');
 }
 
 var divResult = document.querySelector('#results');

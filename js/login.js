@@ -33,6 +33,19 @@ function requiredFields(){
   return true;
 }
 
+function buttonContentValidation(buttonContent){
+  var formButtons = document.querySelectorAll('button');
+  if(formButtons.length === 1){
+    return formButtons[0].textContent === buttonContent;
+  }
+  for(var i = 0; i < formButtons.length; i++){
+    if(formButtons[i].textContent !== buttonContent[i]){
+      return false;
+    }
+  }
+  return true;
+}
+
 var errors = [];
 
 var requiredInputs = ['email', 'password'];
@@ -40,6 +53,8 @@ var requiredInputs = ['email', 'password'];
 var numberOfLabels = 2;
 
 var numberOfButtons = 1;
+
+var buttonContent = 'Log-in';
 
 var usedLink = "file:///C:/Users/juanpablo.kirpach/Desktop/JP/JP/Curso%20Radium%20Rocket/Repositorio/BQA-10/register.html";
 
@@ -67,6 +82,10 @@ if(!changePageValidation(usedLink)){
 
 if(!requiredFields()){
   errors.unshift('At least one field is optional.');
+}
+
+if(!buttonContentValidation(buttonContent)){
+  errors.unshift('Button content is incorrect.');
 }
 
 var divResult = document.querySelector('#results');

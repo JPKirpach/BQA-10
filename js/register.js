@@ -23,9 +23,9 @@ function labelValidation(numberOfLabels){
   return documentLabels.length === numberOfLabels;
 }
 
-function changePageValidation(){
-  var documentLinks = document.querySelectorAll('a');
-  return documentLinks.length;
+function changePageValidation(usedLink){
+  var documentLink = document.querySelector('a');
+  return documentLink.href === usedLink;
 }
 
 function requiredFields(){
@@ -45,6 +45,8 @@ var requiredInputs = ['email', 'password', 'text'];
 var numberOfLabels = 4;
 
 var numberOfButtons = 2;
+
+var usedLink = "file:///C:/Users/juanpablo.kirpach/Desktop/JP/JP/Curso%20Radium%20Rocket/Repositorio/BQA-10/login.html";
 
 if(!formValidation()){
   errors.unshift('Form is not found.');
@@ -68,8 +70,8 @@ if(!labelValidation(numberOfLabels)){
   errors.unshift('At least one label is missing.');
 }
 
-if(changePageValidation() !== 1){
-  errors.unshift('The link to the other page is missing.');
+if(!changePageValidation(usedLink)){
+  errors.unshift('The link to the other page is missing or incorrect.');
 }
 
 if(!requiredFields()){

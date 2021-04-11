@@ -1,0 +1,68 @@
+body {
+  background-color: #48d1cc;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  padding: 1%;
+  font-weight: 800;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: bold;
+}
+
+.container {
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 40%;
+  margin-top: 200px;
+  border-radius: 8%;
+  border: #333333 solid 3px;
+}
+
+.form-item {
+  width: 100%;
+  padding: 3%;
+  font-weight: 400;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-item input {
+  background-color: #e4f8ff;
+}
+
+button {
+  margin: auto;
+  font-weight: 600;
+  font-style: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5%;
+}
+
+#change-page {
+  padding: 1%;
+  font-weight: 400;
+}
+
+#buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+#results {
+  display: none;
+  border: solid 3px #333333;
+  background-color: #e3f886;
+  width: 40%;
+  padding: 2%;
+  margin: auto;
+}

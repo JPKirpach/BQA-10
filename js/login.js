@@ -23,6 +23,16 @@ function changePageValidation(){
   return documentLinks.length;
 }
 
+function requiredFields(){
+  var inputsForm = document.querySelectorAll('input');
+  for(var i = 0; i < inputsForm.length; i++){
+    if(!inputsForm[i].required){
+      return false;
+    }
+  }
+  return true;
+}
+
 var errors = [];
 
 var requiredInputs = ['email', 'password'];
@@ -51,6 +61,10 @@ if(!labelValidation(numberOfLabels)){
 
 if(changePageValidation() !== 1){
   errors.unshift('The link to the other page is missing.');
+}
+
+if(!requiredFields()){
+  errors.unshift('At least one field is optional.');
 }
 
 var divResult = document.querySelector('#results');

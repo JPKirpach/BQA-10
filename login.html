@@ -10,15 +10,22 @@
 		<div class="container">
       <h1>Login Form</h1>
       <form>
-        <div class="form-item">
+        <div class="form-item label-type">
           <label for="email">Email</label>
-          <input type="email" placeholder="Type your e-mail" name="email" required>
+          <input type="email" placeholder="Type your e-mail" name="email" id="email" required>
         </div>
-        <div class="form-item">
+        <div class="alert form-item" id="wrong-email">
+          Type a valid email address.
+        </div>
+        <div class="form-item label-type">
           <label for="password">Password</label>
-          <input type="password" placeholder="Type your password" name="password" required>
+          <input type="password" placeholder="Type your password" name="password" id="password" required>
         </div>
-        <div id="button">
+        <div class="alert form-item" id="wrong-password">
+          Type a valid password. The password must contain at least
+           eight characters (numbers and letters combined).
+        </div>
+        <div class="button">
           <button type="submit">Log-in</button>
         </div>
       </form>
@@ -29,6 +36,7 @@
     <div id='results'>
       <ul id='error-list'></ul>
     </div>
+    <script src="./js/validations.js"></script>
     <script src="./js/login.js"></script>
 	</body>
 </html>

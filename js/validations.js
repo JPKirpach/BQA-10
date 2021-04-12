@@ -72,9 +72,11 @@ function submitFunction(e){
     var displayedText = document.createTextNode(inputValues[i].value + '\n');
     listResults.appendChild(displayedText);
   }
+  getUser()
 }
 
-async function getUsers(){
+async function getUser(){
+  var email = document.querySelector("#email");
   fetch(`https://jsonplaceholder.typicode.com/users?email=${email.value}`)
   .then(function(response){
     return response.json();
@@ -82,4 +84,6 @@ async function getUsers(){
   .then(data => console.log(data))
   .catch()
 };
+
+
 

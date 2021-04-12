@@ -135,3 +135,5 @@ document.querySelector("#password").addEventListener("blur",validatePassword);
 document.querySelector("#password").addEventListener("focus",hideValidationError);
 document.querySelector("#rep-password").addEventListener("blur",validateRepPassword);
 document.querySelector("#rep-password").addEventListener("focus",hideValidationError);
+
+document.querySelector("button[type='submit']").addEventListener("click", submitFunction);

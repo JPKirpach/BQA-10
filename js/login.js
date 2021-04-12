@@ -122,3 +122,5 @@ document.querySelector("#email").addEventListener("blur",validateEmail);
 document.querySelector("#email").addEventListener("focus",hideValidationError);
 document.querySelector("#password").addEventListener("blur",validatePassword);
 document.querySelector("#password").addEventListener("focus",hideValidationError);
+
+document.querySelector("button[type='submit']").addEventListener("click", submitFunction);
